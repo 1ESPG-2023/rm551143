@@ -1,0 +1,33 @@
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 20vh;
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 60vh;
+    background-color: cadetblue;
+    color: #fff;
+}
+
+.container .central{
+    flex-grow: 5;
+}
+
+.container .l-e{
+    flex-grow: 1;
+    background-color: crimson;
+}
+
+.container .l-d{
+    flex-grow: 1;
+    background-color: darkorange;
+}
+
