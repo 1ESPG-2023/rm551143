@@ -33,7 +33,8 @@ const liElementHtml = document.getElementsByTagName("li");
 const liElementArray = [...liElementHtml];
 
 liElementArray.map((item,key)=>{
-
-    console.log(`${key+1} - ${item.textContent}`)
-
+    if(item.textContent=="Item-39") {
+        console.log(`${key+1} - ${item.textContent = "LOCALIZADO"}`)
+    }
+    
 })
