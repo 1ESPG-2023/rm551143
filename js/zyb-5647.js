@@ -38,3 +38,25 @@
 //     }
     
 // })
+
+function soma(p1,p2,p3){
+    nr1 = p1;
+    nr2 = p2;
+
+    return (parseInt(nr1)+ parseInt(nr2)+ parseInt(p3))
+
+    // console.log(`Resultado:${parseInt(nr1)+ parseInt(nr2)+ parseInt(parametro)}`);
+    // console.log(`Este é o parâmetro que foi passado para a função:${parametro}`);
+
+}
+
+//ARROW FUNCTION
+const mudaCor = ()=>{
+
+    //função set-time-out
+    setTimeout(alert("executou"),5000)
+
+}
+
+mudaCor();
+soma();
