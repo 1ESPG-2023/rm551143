@@ -19,6 +19,13 @@ console.log(`Array-3 ${nr3}`);
 
 //listand um array tecnica especial
 
-nr3.forEach((itemDoArray)=>{
-    console.log(`Array-3 sendo listado ${itemDoArray}`);
+// nr3.forEach((itemDoArray)=>{
+//     console.log(`Array-3 sendo listado ${itemDoArray}`);
+// })
+//listando array com map
+nr3.map((numero, key)=>{
+    console.log(`${(key+1)} - itens do array - ${numero}`);
+    numero.forEach((digitos)=>{
+        console.log(digitos)
+    })
 })
