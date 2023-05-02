@@ -1,102 +1,102 @@
-// getElementById()
+// function alteraBanner1() {
 
+//     let nr = Math.round(Math.random() * 3);
 
-// for (let index = 0; index < liElement.length; index++) {
-//     console.log(liElement[index].textContent)   
+//     let caminho = `img/banner-lateral-${nr}.png`;
+
+//     const img1 = document.querySelector(".l-e > img");
+//     img1.src = caminho;
+
 // }
 
-// console.log(liElement.length)
+// alteraBanner1();
 
-//declaração de arrays
-// let nr1 = [1,2,3,4,5];
-// let nr2 = [6,7,8,9,10];
-// //espalhar array com spread [...]
-// let nr3 = [...nr1,...nr2];
+// function alteraBanner2() {
 
-// console.log(`Array-1 ${nr1}`);
-// console.log(`Array-2 ${nr2}`);
-// console.log(`Array-3 ${nr3}`);
+//     let nr = Math.round(Math.random() * 3);
 
-// // //listand um array tecnica especial
+//     let caminho = `img/banner-lateral-${nr}.png`;
 
-// // // nr3.forEach((itemDoArray)=>{
-// // //     console.log(`Array-3 sendo listado ${itemDoArray}`);
-// // // })
-// // //listando array com map
-// nr3.map((numero, key)=>{
-//     console.log(`${(key+1)} - itens do array - ${numero}`);
+//     const img2 = document.querySelector(".central > img");
+//     img2.src = caminho;
 
-// })
+// }
 
-// //convertendo htmlcollection em array de forma indireta
-// const liElementHtml = document.getElementsByTagName("li");
-// const liElementArray = [...liElementHtml];
+// alteraBanner2();
 
-// liElementArray.map((item,key)=>{
-//     if(item.textContent=="Item-39") {
-//         console.log(`${key+1} - ${item.textContent = "LOCALIZADO"}`)
+// function alteraBanner3() {
+
+//     let nr = Math.round(Math.random() * 3);
+
+//     let caminho = `img/banner-lateral-${nr}.png`;
+
+//     const img3 = document.querySelector(".l-d > img");
+//     img3.src = caminho;
+
+// }
+
+// alteraBanner3();
+
+// function alteraBanner() {
+
+//     let nr = Math.ceil(Math.random() * 3);
+
+//     const img1 = document.querySelector(".l-e > img");
+//     const img2 = document.querySelector(".l-d > img");
+
+//     let caminho = `img/banner-lateral-${nr}.png`;
+//     img1.src = caminho;
+
+//     nr = Math.ceil(Math.random() * 3);
+//     caminho = `img/banner-lateral-${nr}.png`;
+//     img2.src = caminho;
+
+//     setTimeout(alteraBanner, 1000);
+
+// }
+
+// const botao = document.querySelector(".central button");
+
+// botao.addEventListener("click", ()=>{
+//     const imgLampada = document.querySelector(".central img");
+
+
+//     if(botao.textContent == "LIGAR"){
+//         imgLampada.src = "img/pic_bulbon.gif"
+//         botao.textContent = "DESLIGAR";
+//     }else{
+//         imgLampada.src = "img/pic_bulboff.gif"
+//         botao.textContent = "LIGAR";
 //     }
-    
 // })
 
-// function soma(p1,p2,p3){
-//     nr1 = p1;
-//     nr2 = p2;
+// alteraBanner();
 
-//     return (parseInt(nr1)+ parseInt(nr2)+ parseInt(p3))
+// function ligaDesliga() {
 
-//     // console.log(`Resultado:${parseInt(nr1)+ parseInt(nr2)+ parseInt(parametro)}`);
-//     // console.log(`Este é o parâmetro que foi passado para a função:${parametro}`);
+//     const imgLampada = document.querySelector(".central img");
 
-// }
 
-// //ARROW FUNCTION
-// const mudaCor = ()=>{
-
-//     //função set-time-out
-//     setTimeout(alert("executou"),5000)
+//     if(botao.textContent == "LIGAR"){
+//         imgLampada.src = "img/pic_bulbon.gif"
+//         botao.textContent = "DESLIGAR";
+//     }else{
+//         imgLampada.src = "img/pic_bulboff.gif"
+//         botao.textContent = "LIGAR";
+//     }
 
 // }
 
-// mudaCor();
-// soma();
+const inputUser = document.querySelector("input[name='nmUser']");
 
-// let tmp = "";
+inputUser.addEventListener("focus", ()=>{
+    inputUser.setAttribute("style", "outline-color:#ff0000;");
+});
 
-// function mudaCor() {
-
-//     let r = "";
-//     let g = "";
-//     let b = "";
-
-//     //random = gera números aleatórios entre 0 e 1
-//     //ceil, floor e round que arredondam o número para cima, para baixo ou aleatoriamente
-
-//     //determinando para a variável r um valor entre 0 e 255
-//     r = Math.round(Math.random() * 255);
-//     g = Math.round(Math.random() * 255);
-//     b = Math.round(Math.random() * 255);
-    
-//     const cabecalho = document.querySelector(".cabecalho");
-
-//     cabecalho.setAttribute("style",`background-color:rgb(${r},${g},${b})`)
-
-//     tmp = setTimeout(mudaCor, 500);
-
-// }
-
-// mudaCor();
-
-function alteraBanner() {
-
-    let nr = Math.round(Math.random() * 3);
-
-    let caminho = `img/banner-lateral-${nr}.png`;
-
-    const img1 = document.querySelector(".l-e > img");
-    img1.src = caminho;
-
-}
-
-alteraBanner();
-
+inputUser.addEventListener("keyup", ()=>{
+    if(inputUser.value.length < 8){
+    inputUser.setAttribute("style", "outline-color:#ff0000;");
+    }else{
+    inputUser.setAttribute("style", "outline-color:#dddddd;");
+    }
+});

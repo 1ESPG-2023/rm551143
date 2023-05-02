@@ -1,48 +1,35 @@
 .cabecalho{
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
-    width:100vw;
-    height: 20vh;
-    background-color: blueviolet;
-    color: #fff;
-}
-
-.cabecalho2{
-    display: flex;
     width: 100vw;
-    height: 20vh;    
-}
-
-
-.container{
+    height: 20vh;
+    background-color: blue;
+    color: #fff;
+  }
+  
+  .container{
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    height: auto;
-    background-color: cadetblue;
-    color: #fff;
-}
-
-.container .central{
+    height: 130vh;
+    align-items: center;
+  }
+  
+  .container .central{
     flex-grow: 5;
-
-}
-
-
-.container .l-e{
+  }
+  
+  .container .l-e{
+    flex-grow: 5;
+  }
+  
+  .container .l-d{
+    flex-grow: 5;
+  }
+  
+  .banner{
     flex-grow: 1;
-    background-color: crimson;
-}
-
-.container .l-d{
-    flex-grow: 1;
-    background-color: darkorange;
-}
-
-
-.banner{
-    flex-grow: 1;  
     width: 100%;
     height: 100%;
-}
+  }
