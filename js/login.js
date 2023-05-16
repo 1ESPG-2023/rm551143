@@ -30,19 +30,52 @@ addEventListener("click",(evento)=>{
 
         let lista = JSON.parse(localStorage.getItem("listaUser"));
 
-        lista.forEach((usuario)=> {
-            // console.log(usuario.nomeUsuario)
-            if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
-                console.log("VALIDADO!");
-                h1Titulo.innerHTML = "Bem vindo : " + usuario.nomeUsuario;
+        let userValidado = {};
+
+        try{
+            lista.forEach((usuario)=> {
+                //VALIDAÇÃO
+                if(inputUserValue == usuario.nomeUsuario && inputPassValue == usuario.senhaUsuario){
+                    userValidado = usuario;
+                    throw "VALIDADO";
+                }
+            });
+
+            throw "NÃO VALIDADO";
+
+
+        }catch(msg){
+            if(msg == "VALIDADO"){
+                h1Titulo.innerHTML = "<span><strong>login validado com sucesso!</strong></span>";
+                h1Titulo.setAttribute("style","color:#00ff00")
+
+                userValidado["token"] = 
+
+
+                localStorage.setItem("userValidado", JSON.stringify(userValidado));
+                // console.log("VALIDADO");
+                // direcionando o usuario para a pagina de sucesso
+                window.location.href = "../sucesso.html";
+
             }else{
-                console.log("NÃO VALIDOU...");
-                h1Titulo.innerHTML = "";
+                h1Titulo.innerHTML = "<span><strong>login ou senha inválidos</strong></span>";
+                h1Titulo.setAttribute("style","color:#ff0000")
+                // console.log("NÃO VALIDADO");
+                window.location.href = "../erro.html"
             }
+        }       
+    }
+});
 
-        })
-        
+try{
+    const userBemVindo = document.querySelector("#userWelcome");
+    userBemVindo.innerHTML = JSON.parse(localStorage.getItem("userValidado"))
+    userBemVindo.innerHTML = usuario.nomeUsuario;
 
+}catch(erro){
+
+    if(userBemVindo != null){
+        userBemVindo.innerHTML = JSON.parse(localStorage.getItem("userValidado")).nomeUsuario;
     }
 
-});
+}
